@@ -19,18 +19,16 @@ class _SaState extends State<SaifulEBazar> {
       theme: ThemeData(
           colorSchemeSeed: AppColors.primaryColor,
           progressIndicatorTheme:
-              const ProgressIndicatorThemeData(color: AppColors.primaryColor),
+              const ProgressIndicatorThemeData(
+                  color: AppColors.primaryColor),
           textTheme: _textTheme,
           inputDecorationTheme: _inputDecorationTheme(),
           appBarTheme: const AppBarTheme(
-            backgroundColor: Colors.white,
-            foregroundColor: Colors.black
-          ),
+              foregroundColor: Colors.black,
+          backgroundColor: Colors.amber),
           textButtonTheme: TextButtonThemeData(
-            style: TextButton.styleFrom(
-              foregroundColor: AppColors.primaryColor
-            )
-          ),
+              style: TextButton.styleFrom(
+                  foregroundColor: AppColors.primaryColor)),
           elevatedButtonTheme: ElevatedButtonThemeData(
             style: ElevatedButton.styleFrom(
                 //maximumSize: Size(double.maxFinite, 30)
@@ -40,24 +38,25 @@ class _SaState extends State<SaifulEBazar> {
                 backgroundColor: AppColors.primaryColor,
                 foregroundColor: Colors.white,
                 textStyle:
-                    const TextStyle(fontWeight: FontWeight.w400, fontSize: 16)),
+                    const TextStyle(
+                        fontWeight: FontWeight.w400, fontSize: 16)),
           )),
     );
   }
 
   final TextTheme _textTheme = const TextTheme(
       headlineLarge: TextStyle(
-          fontSize: 24, fontWeight: FontWeight.w600, color: Colors.black),
+          fontSize: 24, fontWeight: FontWeight.w600,
+          color: Colors.black),
       headlineSmall: TextStyle(
         fontSize: 14,
         color: Colors.blueGrey,
       ));
 
   InputDecorationTheme _inputDecorationTheme() => InputDecorationTheme(
-    hintStyle: const TextStyle(
-      color: Colors.grey,
-      fontWeight: FontWeight.w400
-    ),
+        hintStyle:
+            const TextStyle(
+                color: Colors.grey, fontWeight: FontWeight.w400),
         border: _outlineInputBorder,
         enabledBorder: _outlineInputBorder,
         focusedBorder: _outlineInputBorder,

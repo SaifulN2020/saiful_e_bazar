@@ -13,7 +13,7 @@ class HomeCarousalSlider extends StatefulWidget {
 }
 
 class _HomeCarousalSliderState extends State<HomeCarousalSlider> {
-  final ValueNotifier _selectedPageIndex = ValueNotifier(0);
+  final ValueNotifier<int> _selectedPageIndex = ValueNotifier(0);
 
   @override
   Widget build(BuildContext context) {
@@ -23,8 +23,8 @@ class _HomeCarousalSliderState extends State<HomeCarousalSlider> {
           options: CarouselOptions(
               height: 180.0,
               viewportFraction: 1,
-              onPageChanged: (contex, _) {
-                _selectedPageIndex.value=1;
+              onPageChanged: (index , _) {
+                _selectedPageIndex.value=index;
 
               }),
           items: [1, 2, 3, 4, 5].map((i) {
@@ -46,6 +46,7 @@ class _HomeCarousalSliderState extends State<HomeCarousalSlider> {
             );
           }).toList(),
         ),
+        SizedBox(height: 8,),
         ValueListenableBuilder(
             valueListenable: _selectedPageIndex,
             builder: (context, currentPage, _) {
@@ -58,7 +59,8 @@ class _HomeCarousalSliderState extends State<HomeCarousalSlider> {
                       width: 15,
                       margin: const EdgeInsets.all(4),
                       decoration: BoxDecoration(
-                        border: Border.all(color: Colors.grey, width: 1),
+                        color:  i==currentPage ? AppColors.primaryColor :null,
+                        border: Border.all(color: i==currentPage ? AppColors.primaryColor : Colors.grey, width: 1),
                         borderRadius: BorderRadius.circular(50),
                       ),
                     )

@@ -3,8 +3,6 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 import 'package:saiful_e_bazar/presentation/utility/asset_path.dart';
 
-
-
 class CompleteProfileScreen extends StatefulWidget {
   const CompleteProfileScreen({Key? key}) : super(key: key);
 
@@ -38,14 +36,14 @@ class _CompleteProfileScreenState extends State<CompleteProfileScreen> {
                   height: 8,
                 ),
                 Text(
-                  "Complete profile",
+                  "Complete Profile",
                   style: Theme.of(context).textTheme.headlineLarge,
                 ),
                 const SizedBox(
                   height: 8,
                 ),
                 Text(
-                  "Get started with us with your details",
+                  "Get started with us your details",
                   style: Theme.of(context).textTheme.headlineSmall,
                 ),
                 const SizedBox(
@@ -68,33 +66,45 @@ class _CompleteProfileScreenState extends State<CompleteProfileScreen> {
 
   Widget _newBuildCompleteProfile() {
     return Form(
-                key: _keyForm,
-                child: Column(
-                  children: [
-                     TextFormField(
-                      controller: _firstNameTextEditController,
-                      decoration: const InputDecoration(hintText: "First name"),
-                    ),const SizedBox(height: 4,),
-                    TextFormField(
-                      controller: _lastNameTextEditController,
-                      decoration: const InputDecoration(hintText: "Last Name"),
-                    ),const SizedBox(height: 4,),
-                    TextFormField(
-                      controller: _mobileTextEditController,
-                      decoration: const InputDecoration(hintText: "Mobile"),
-                    ),const SizedBox(height: 4,),
-                    TextFormField(
-                      controller: _cityTextEditController,
-                      decoration: const InputDecoration(hintText: "City"),
-                    ),const SizedBox(height: 4,),
-                    TextFormField(
-                      controller: _shippingAddressTEController,
-                      decoration: const InputDecoration(hintText: "Shipping Address"),
-                      maxLines: 3,
-                    ),
-                  ],
-                ),
-              );
+      key: _keyForm,
+      child: Column(
+        children: [
+          TextFormField(
+            controller: _firstNameTextEditController,
+            decoration: const InputDecoration(hintText: "First name"),
+          ),
+          const SizedBox(
+            height: 4,
+          ),
+          TextFormField(
+            controller: _lastNameTextEditController,
+            decoration: const InputDecoration(hintText: "Last Name"),
+          ),
+          const SizedBox(
+            height: 4,
+          ),
+          TextFormField(
+            controller: _mobileTextEditController,
+            decoration: const InputDecoration(hintText: "Mobile"),
+          ),
+          const SizedBox(
+            height: 4,
+          ),
+          TextFormField(
+            controller: _cityTextEditController,
+            decoration: const InputDecoration(hintText: "City"),
+          ),
+          const SizedBox(
+            height: 4,
+          ),
+          TextFormField(
+            controller: _shippingAddressTEController,
+            decoration: const InputDecoration(hintText: "Shipping Address"),
+            maxLines: 3,
+          ),
+        ],
+      ),
+    );
   }
 
   @override

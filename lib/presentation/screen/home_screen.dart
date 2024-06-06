@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:saiful_e_bazar/presentation/utility/app_color.dart';
 import 'package:saiful_e_bazar/presentation/utility/asset_path.dart';
+import 'package:saiful_e_bazar/presentation/widget/catagory_item.dart';
 import '../widget/home_carosal_slider.dart';
+import '../widget/product_cart.dart';
+import '../widget/sanction_header.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -9,6 +13,7 @@ class HomeScreen extends StatefulWidget {
   @override
   State<HomeScreen> createState() => _HomeScreenState();
 }
+
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
@@ -31,23 +36,45 @@ class _HomeScreenState extends State<HomeScreen> {
                 const SizedBox(height: 16),
                 const HomeCarousalSlider(),
                 const SizedBox(height: 16),
-                const Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text("Header",
-                        style: TextStyle(
-                            fontSize: 22, fontWeight: FontWeight.w400)),
-                    Text(
-                      "See All",
-                      style: TextStyle(fontSize: 16),
-                    )
-                  ],
-                )
+                SanctionHeader(
+                  title: "All Catagory",
+                  onTapSellAll: () {},
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                _buildCatagoryListView(),
+                SanctionHeader(
+                  title: "Popular Products",
+                  onTapSellAll: () {},
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                const ProductCart()
               ],
             ),
           ),
         ));
   }
+
+  Widget _buildCatagoryListView() {
+    return SizedBox(
+      height: 110,
+      child: ListView.separated(
+          scrollDirection: Axis.horizontal,
+          itemCount: 8,
+          itemBuilder: (context, index) {
+            return CatagoryItem();
+          },
+          separatorBuilder: (BuildContext context, int index) {
+            return SizedBox(
+              width: 8,
+            );
+          }),
+    );
+  }
+
   Widget _buildSearchTextField() {
     return TextFormField(
         decoration: InputDecoration(
