@@ -13,6 +13,7 @@ class ProductCart extends StatelessWidget {
     return Card(
       elevation: 3,
       color: Colors.white,
+      surfaceTintColor: Colors.white,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
       child: SizedBox(
         width: 150,

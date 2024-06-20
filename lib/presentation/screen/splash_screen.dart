@@ -3,6 +3,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:saiful_e_bazar/presentation/screen/home_screen.dart';
+import 'package:saiful_e_bazar/presentation/screen/main_bottom_nav_bar_screen.dart';
 import 'package:saiful_e_bazar/presentation/utility/asset_path.dart';
 
 import '../widget/app_logo.dart';
@@ -26,7 +27,7 @@ class _SplashScreenState extends State<SplashScreen> {
 
   void _moveToNextScreen() async {
     await Future.delayed(const Duration(seconds: 5));
-    Get.off(() => const HomeScreen());
+    Get.off(() => const MainBottomNavBarScreen());
 
   }
 

@@ -22,7 +22,9 @@ class _HomeScreenState extends State<HomeScreen> {
           title: SvgPicture.asset(AssetsPath.appLogoNavSvg),
           actions: [
             appbarIconButton(icon: Icons.person, onTap: () {}),
+            const SizedBox(width: 5,),
             appbarIconButton(icon: Icons.call, onTap: () {}),
+            const  SizedBox(width: 5,),
             appbarIconButton(icon: Icons.notifications, onTap: () {}),
           ],
         ),
@@ -51,7 +53,28 @@ class _HomeScreenState extends State<HomeScreen> {
                 const SizedBox(
                   height: 10,
                 ),
-                const ProductCart()
+                _buildProductListView(),
+                const SizedBox(height: 10,),
+                SanctionHeader(
+                  title: "Special",
+                  onTapSellAll: () {},
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                _buildProductListView(),
+                const  SizedBox(height: 10,),
+                SanctionHeader(
+                  title: "New",
+                  onTapSellAll: () {},
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                _buildProductListView()
+
+
+
               ],
             ),
           ),
@@ -65,10 +88,26 @@ class _HomeScreenState extends State<HomeScreen> {
           scrollDirection: Axis.horizontal,
           itemCount: 8,
           itemBuilder: (context, index) {
-            return CatagoryItem();
+            return const CatagoryItem();
           },
           separatorBuilder: (BuildContext context, int index) {
-            return SizedBox(
+            return const SizedBox(
+              width: 8
+            );
+          }),
+    );
+  }
+  Widget _buildProductListView() {
+    return SizedBox(
+      height: 220,
+      child: ListView.separated(
+          scrollDirection: Axis.horizontal,
+          itemCount: 8,
+          itemBuilder: (context, index) {
+            return const ProductCart();
+          },
+          separatorBuilder: (BuildContext context, int index) {
+            return const SizedBox(
               width: 8,
             );
           }),

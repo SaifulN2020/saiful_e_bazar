@@ -4,6 +4,8 @@ import 'package:saiful_e_bazar/presentation/screen/splash_screen.dart';
 
 import 'package:saiful_e_bazar/presentation/utility/app_color.dart';
 
+import 'controller_binder.dart';
+
 class SaifulEBazar extends StatefulWidget {
   const SaifulEBazar({Key? key}) : super(key: key);
 
@@ -16,6 +18,7 @@ class _SaState extends State<SaifulEBazar> {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       home: const SplashScreen(),
+      initialBinding: ControllerBinder(),
       theme: ThemeData(
           colorSchemeSeed: AppColors.primaryColor,
           progressIndicatorTheme:
