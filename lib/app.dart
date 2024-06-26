@@ -8,6 +8,7 @@ import 'controller_binder.dart';
 
 class SaifulEBazar extends StatefulWidget {
   const SaifulEBazar({Key? key}) : super(key: key);
+  static GlobalKey<NavigatorState> navigationKey=GlobalKey<NavigatorState>();
 
   @override
   State<SaifulEBazar> createState() => _SaState();
@@ -17,6 +18,7 @@ class _SaState extends State<SaifulEBazar> {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
+      navigatorKey: SaifulEBazar.navigationKey,
       home: const SplashScreen(),
       initialBinding: ControllerBinder(),
       theme: ThemeData(
