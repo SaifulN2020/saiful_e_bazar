@@ -19,9 +19,11 @@ class _ProductListScreenState extends State<ProductListScreen> {
 
               crossAxisCount: 3,childAspectRatio: 0.8),
           itemBuilder: (context,index){
-            return const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 8,vertical: 4),
-              child: FittedBox(child: ProductCart()),
+            return  Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 8,vertical: 4),
+              child: FittedBox(child: ProductCart(
+                showAddToWishList: false,
+              )),
             );
           }),
     );

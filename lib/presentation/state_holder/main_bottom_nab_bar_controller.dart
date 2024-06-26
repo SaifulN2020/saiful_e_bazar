@@ -9,4 +9,7 @@ class MainBottomNabBarController extends GetxController {
     _selectedIndex = index;
     update();
   }
+  void backToHome(){
+    changeIndex(0);
+  }
 }

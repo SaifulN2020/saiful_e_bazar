@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:saiful_e_bazar/presentation/screen/cart_list_screen.dart';
 import 'package:saiful_e_bazar/presentation/screen/catagory_list_screen.dart';
 import 'package:saiful_e_bazar/presentation/screen/home_screen.dart';
+import 'package:saiful_e_bazar/presentation/screen/wish_list_screen.dart';
 import 'package:saiful_e_bazar/presentation/state_holder/main_bottom_nab_bar_controller.dart';
 import 'package:saiful_e_bazar/presentation/utility/app_color.dart';
 
@@ -18,8 +20,8 @@ class _MainBottomNavBarScreenState extends State<MainBottomNavBarScreen> {
   final List<Widget> _screen = const [
     HomeScreen(),
     CatagoryListScreen(),
-    HomeScreen(),
-    HomeScreen(),
+    CartListScreen(),
+    WishListScreen(),
   ];
 
   @override
