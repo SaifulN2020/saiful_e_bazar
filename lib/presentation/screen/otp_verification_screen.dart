@@ -7,6 +7,7 @@ import 'package:saiful_e_bazar/presentation/screen/complete_profile_screen.dart'
 import 'package:saiful_e_bazar/presentation/utility/app_color.dart';
 
 import '../utility/asset_path.dart';
+import 'package:flutter_timer_countdown/flutter_timer_countdown.dart';
 
 class OtpVerificationScreen extends StatefulWidget {
   final String email;
@@ -73,8 +74,27 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
                   },
                   child: const Text("Next")),
               const SizedBox(height: 8),
-              Text("The code will expire in 120 s",
-                  style: Theme.of(context).textTheme.headlineSmall),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+
+                  Text("The code will expire in ",
+                      style: Theme.of(context).textTheme.headlineSmall),
+                  TimerCountdown(
+                    format: CountDownTimerFormat.secondsOnly,
+                    endTime: DateTime.now().add(
+                      const Duration(
+                        seconds: 120
+                      ),
+                    ),
+                    onEnd: () {
+                      print("Timer finished");
+                    },
+                  ),
+
+                ],
+              ),
+
               const SizedBox(height: 10),
               Text("Resend Code",
                   style: Theme.of(context).textTheme.headlineSmall)
